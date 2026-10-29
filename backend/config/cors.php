@@ -5,7 +5,7 @@ return [
     'allowed_methods' => ['*'],
     'allowed_origins' => [
         'http://localhost:7171',  // Vite dev server
-        'http://localhost:3888',  // CC Session Manager
+        'http://127.0.0.1:7171',
     ],
     'allowed_origins_patterns' => [],
     'allowed_headers' => ['*'],
