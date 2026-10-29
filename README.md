@@ -9,7 +9,7 @@ all my projects share.
 It runs locally and stays up all day. This repo is a snapshot of it: the code is as
 it runs, with my own project names and data taken out.
 
-![The deck: live sessions, what needs me, and machine pressure](docs/screenshots/deck.png)
+![The deck: live sessions, what needs me, and machine pressure](docs/images/deck.png)
 
 *Screenshots are from a demo database with made-up projects and generated session transcripts.*
 
@@ -28,8 +28,8 @@ it runs, with my own project names and data taken out.
 
 <table>
 <tr>
-<td width="50%"><img src="docs/screenshots/costs.png" alt="Quota and cost page: current 5-hour window, burn rate, per-project token share and model mix"></td>
-<td width="50%"><img src="docs/screenshots/tasks.png" alt="Task board across all projects, sorted by priority and deadline"></td>
+<td width="50%"><img src="docs/images/costs.png" alt="Quota and cost page: current 5-hour window, burn rate, per-project token share and model mix"></td>
+<td width="50%"><img src="docs/images/tasks.png" alt="Task board across all projects, sorted by priority and deadline"></td>
 </tr>
 <tr>
 <td><b>Quota &amp; cost:</b> the open 5-hour window, burn rate, and which project and model is spending it.</td>
