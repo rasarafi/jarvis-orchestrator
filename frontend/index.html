@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jarvis v2</title>
+    <!-- Set the theme class before first paint to avoid a flash. Default is dark
+         (the deck's identity); 'light' (no class) and 'biscuit' are opt-in & persisted. -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('jarvis-theme')
+          if (t === 'biscuit') document.documentElement.classList.add('biscuit')
+          else if (t !== 'light') document.documentElement.classList.add('dark')
+        } catch (e) {
+          document.documentElement.classList.add('dark')
+        }
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

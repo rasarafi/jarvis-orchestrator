@@ -1,0 +1,426 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+@import "@fontsource/inter";
+@import "@fontsource/ibm-plex-sans/400.css";
+@import "@fontsource/ibm-plex-sans/500.css";
+@import "@fontsource/ibm-plex-sans/600.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+@import "@fontsource/chakra-petch/600.css";
+@import "@fontsource/chakra-petch/700.css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: oklch(0.205 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.205 0 0);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.922 0 0);
+    --input: oklch(0.922 0 0);
+    --ring: oklch(0.708 0 0);
+    --chart-1: oklch(0.809 0.105 251.813);
+    --chart-2: oklch(0.623 0.214 259.815);
+    --chart-3: oklch(0.546 0.245 262.881);
+    --chart-4: oklch(0.488 0.243 264.376);
+    --chart-5: oklch(0.424 0.199 265.638);
+    --radius: 0.625rem;
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.205 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.205 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.922 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.556 0 0);
+    --chart-1: oklch(0.809 0.105 251.813);
+    --chart-2: oklch(0.623 0.214 259.815);
+    --chart-3: oklch(0.546 0.245 262.881);
+    --chart-4: oklch(0.488 0.243 264.376);
+    --chart-5: oklch(0.424 0.199 265.638);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.556 0 0);
+}
+
+@theme inline {
+    --font-sans: 'Geist Variable', sans-serif;
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+  html {
+    @apply font-sans;
+    }
+}
+
+/* ═══ Ops Deck design tokens ═══
+   Two-theme system. Light values are the base (:root); dark values override
+   under html.dark. The `.dark` class on <html> is the single theme signal —
+   it also drives the shadcn tokens above, so one toggle flips everything.
+   Source of truth for the light skin: the approved light-theme mock. Dark skin: the original redesign mockup. */
+:root {
+  /* light — a cool "instrument panel in daylight" skin. Neutrals carry a
+     slight blue bias toward the cyan accent; the two semantic hues are
+     deepened so they hold contrast on paper instead of glaring. */
+  --void: #E7ECF3;          /* page background */
+  --deck: #FDFEFF;          /* surface 1 (cards lift off the page) */
+  --deck-2: #EAF0F8;        /* surface 2 / raised */
+  --line: #C7D3E2;          /* borders */
+  --line-soft: #DDE5F0;
+  --ink: #17222E;
+  --mut: #4F5E71;
+  --dim: #8090A2;
+
+  --arc: #0C81A3;           /* machine activity — cyan (deepened for light) */
+  --arc-soft: rgba(12, 129, 163, 0.10);
+  --gold: #AC7110;          /* needs human — amber (deepened for light) */
+  --gold-soft: rgba(172, 113, 16, 0.13);
+  --ok: #1B915B;
+  --bad: #BE473A;
+
+  /* project hues (fallback palette; API colors win when present) */
+  --p-1: #3B7CBB;
+  --p-2: #1D9A73;
+  --p-3: #875AD0;
+  --p-4: #C9587F;
+  --p-5: #0C81A3;
+  --p-6: #C67D3B;
+
+  /* structural surfaces the two semantic hues don't cover — theme-aware */
+  --hover: rgba(19, 44, 78, 0.035);
+  --hover-strong: rgba(19, 44, 78, 0.055);
+  --overlay: rgba(23, 34, 46, 0.32);
+  --grid-glow: rgba(12, 129, 163, 0.07);
+  --grid-line: rgba(28, 52, 88, 0.05);
+  --strike: rgba(79, 94, 113, 0.5);
+  --card-shadow: 0 1px 2px rgba(40, 62, 98, 0.05), 0 3px 10px rgba(40, 62, 98, 0.04);
+  --pill-shadow: 0 10px 26px rgba(38, 62, 98, 0.16);
+  --drawer-shadow: -20px 0 50px rgba(38, 62, 98, 0.14);
+  --scrollbar: #C2CEDC;
+  --scrollbar-hover: #A9B8CB;
+
+  /* data-viz — see the block comment above html.dark's copy for the rules.
+     Ordinal ramp on the arc hue; series pair is the validated blue/orange. */
+  --pri-urgent: #063E58;
+  --pri-high: #0C81A3;
+  --pri-medium: #4CA8C6;
+  --pri-low: #84BFD3;
+  --viz-1: #2A78D6;
+  --viz-2: #EB6834;
+
+  --font-display: 'Chakra Petch', 'Segoe UI', sans-serif;
+  --font-body: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Cascadia Mono', monospace;
+}
+
+html.dark {
+  /* dark — the original ops-deck skin (source of truth: redesign-mockup.html) */
+  --void: #0A0E15;
+  --deck: #0F141D;
+  --deck-2: #141B27;
+  --line: #1E2836;
+  --line-soft: #16202E;
+  --ink: #E9EEF6;
+  --mut: #8B98AB;
+  --dim: #56637A;
+
+  --arc: #56C8E8;
+  --arc-soft: rgba(86, 200, 232, 0.10);
+  --gold: #E6B35C;
+  --gold-soft: rgba(230, 179, 92, 0.10);
+  --ok: #63C98F;
+  --bad: #E07A6E;
+
+  --p-1: #6FA8DC;
+  --p-2: #6ECFA5;
+  --p-3: #B48CE8;
+  --p-4: #E88CB0;
+  --p-5: #56C8E8;
+  --p-6: #E8A56F;
+
+  --hover: rgba(255, 255, 255, 0.015);
+  --hover-strong: rgba(255, 255, 255, 0.025);
+  --overlay: rgba(0, 0, 0, 0.4);
+  --grid-glow: rgba(86, 200, 232, 0.05);
+  --grid-line: rgba(255, 255, 255, 0.014);
+  --strike: rgba(139, 152, 171, 0.5);
+  --card-shadow: none;
+  --pill-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  --drawer-shadow: -20px 0 60px rgba(0, 0, 0, 0.5);
+  --scrollbar: #3f3f46;
+  --scrollbar-hover: #52525b;
+
+  /* ═══ data-viz tokens ═══
+     Priority is ORDINAL, so it gets a single-hue ramp (the arc hue) rather
+     than four unrelated colors — severity reads off lightness, and the ramp
+     stays legible to colorblind eyes. Direction flips per theme: on the dark
+     deck the brightest step is the most severe, on the light/biscuit skins
+     the darkest is. --viz-1/2 are the categorical pair for two-series charts
+     (created vs completed). Every set below was run through the data-viz
+     validator against ITS OWN surface (--deck) — if you change a value,
+     re-validate; the ramps are not free-hand. */
+  --pri-urgent: #A9E9FB;
+  --pri-high: #56C8E8;
+  --pri-medium: #3585AE;
+  --pri-low: #2A6180;
+  --viz-1: #3987E5;
+  --viz-2: #D95926;
+}
+
+/* biscuit — a warm-wood light skin. Light-family (no `.dark`), so it inherits
+   the light-theme semantics and overrides only the color tokens. Overrides BOTH
+   the ops-deck tokens AND the shadcn tokens so primitives (dialogs, popovers,
+   inputs) sit on the same cream ground instead of cold white.
+   Source of truth: the approved biscuit mock (scratchpad/biscuit-theme.html). */
+html.biscuit {
+  /* ops-deck tokens */
+  --void: #EFE3CE;          /* page background — biscuit cream */
+  --deck: #FBF4E6;          /* surface 1 — lighter cream, lifts off the page */
+  --deck-2: #E7D8BC;        /* surface 2 / raised */
+  --line: #D8C4A0;          /* borders */
+  --line-soft: #E6D6B8;
+  --ink: #3B2E1E;           /* walnut */
+  --mut: #6E5C42;
+  --dim: #A08C6E;
+
+  --arc: #2E7A6A;           /* machine activity — pine-teal (a cool anchor amid the warm) */
+  --arc-soft: rgba(46, 122, 106, 0.12);
+  --gold: #B0781C;          /* needs human — honey amber */
+  --gold-soft: rgba(176, 120, 28, 0.15);
+  --ok: #5E7C2E;            /* moss */
+  --bad: #B4553B;           /* brick */
+
+  /* project hues (fallback palette; API colors win when present) */
+  --p-1: #B0781C;
+  --p-2: #2E7A6A;
+  --p-3: #8A6D3B;
+  --p-4: #B5607A;
+  --p-5: #9C5A2E;
+  --p-6: #C67D3B;
+
+  --hover: rgba(90, 66, 30, 0.04);
+  --hover-strong: rgba(90, 66, 30, 0.07);
+  --overlay: rgba(59, 46, 30, 0.34);
+  --grid-glow: rgba(176, 120, 28, 0.08);
+  --grid-line: rgba(90, 66, 30, 0.035);
+  --strike: rgba(110, 92, 66, 0.5);
+  --card-shadow: 0 1px 2px rgba(90, 66, 30, 0.06), 0 4px 14px rgba(90, 66, 30, 0.07);
+  --pill-shadow: 0 10px 26px rgba(90, 66, 30, 0.18);
+  --drawer-shadow: -20px 0 50px rgba(90, 66, 30, 0.16);
+  --scrollbar: #D3BE97;
+  --scrollbar-hover: #C0A87C;
+
+  /* data-viz — pine-teal ordinal ramp + teal/amber series pair, validated
+     against the cream surface (see the dark block's comment). */
+  --pri-urgent: #15413A;
+  --pri-high: #12796A;
+  --pri-medium: #4E998B;
+  --pri-low: #7CB3A6;
+  --viz-1: #00806A;
+  --viz-2: #B0781C;
+
+  /* shadcn tokens — warmed so dialogs/popovers/inputs match the cream ground */
+  --background: #FBF4E6;
+  --foreground: #3B2E1E;
+  --card: #FBF4E6;
+  --card-foreground: #3B2E1E;
+  --popover: #FBF4E6;
+  --popover-foreground: #3B2E1E;
+  --primary: #3B2E1E;
+  --primary-foreground: #FBF4E6;
+  --secondary: #E7D8BC;
+  --secondary-foreground: #3B2E1E;
+  --muted: #E7D8BC;
+  --muted-foreground: #6E5C42;
+  --accent: #E7D8BC;
+  --accent-foreground: #3B2E1E;
+  --destructive: #B4553B;
+  --border: #D8C4A0;
+  --input: #D8C4A0;
+  --ring: #B0781C;
+  --sidebar: #EFE3CE;
+  --sidebar-foreground: #3B2E1E;
+  --sidebar-primary: #3B2E1E;
+  --sidebar-primary-foreground: #FBF4E6;
+  --sidebar-accent: #E7D8BC;
+  --sidebar-accent-foreground: #3B2E1E;
+  --sidebar-border: #D8C4A0;
+  --sidebar-ring: #B0781C;
+}
+
+@theme inline {
+  --color-void: var(--void);
+  --color-deck: var(--deck);
+  --color-deck-2: var(--deck-2);
+  --color-line: var(--line);
+  --color-line-soft: var(--line-soft);
+  --color-ink: var(--ink);
+  --color-mut: var(--mut);
+  --color-dim: var(--dim);
+  --color-arc: var(--arc);
+  --color-arc-soft: var(--arc-soft);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-ok: var(--ok);
+  --color-bad: var(--bad);
+  --color-hover: var(--hover);
+  --color-hover-strong: var(--hover-strong);
+  --color-overlay: var(--overlay);
+  --color-pri-urgent: var(--pri-urgent);
+  --color-pri-high: var(--pri-high);
+  --color-pri-medium: var(--pri-medium);
+  --color-pri-low: var(--pri-low);
+  --color-viz-1: var(--viz-1);
+  --color-viz-2: var(--viz-2);
+  --font-display: var(--font-display);
+  --font-mono2: var(--font-mono);
+}
+
+:root {
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+body {
+  background: var(--void);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Cross-fade page colors when the theme flips (skipped under reduced-motion). */
+@media (prefers-reduced-motion: no-preference) {
+  body {
+    transition: background-color 0.35s ease, color 0.35s ease;
+  }
+}
+
+/* faint deck grid — the room feels instrumented, not empty.
+   Dark: cyan glow + light scanlines. Light: same shape, tuned to a
+   blueprint grid on paper. Both via theme-aware --grid-* tokens. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, var(--grid-glow), transparent),
+    repeating-linear-gradient(0deg, transparent 0 47px, var(--grid-line) 47px 48px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ═══ Motion gate ═══
+   This machine reports prefers-reduced-motion (Windows accessibility setting),
+   so animations run ONLY under html.motion — set by main.tsx when the OS
+   allows motion OR ?motion=force is in the URL. */
+html.motion .anim-trace {
+  animation: deck-trace-pulse 1.15s ease-in-out infinite;
+}
+
+html.motion .anim-blink {
+  animation: deck-blink 1.6s ease-in-out infinite;
+}
+
+@keyframes deck-trace-pulse {
+  0%, 100% { transform: scaleY(0.45); }
+  50% { transform: scaleY(1); }
+}
+
+@keyframes deck-blink {
+  50% { opacity: 0.25; }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-hover);
+}
